@@ -23,7 +23,7 @@ private void onButtonClick()
 
 ![](./pic/EventHandlerExample.gif)
 
-完整代码如下：
+## 代码示例
 
 ```java
 import javafx.application.Application;
@@ -67,7 +67,7 @@ public class EventHandlerExample extends Application
 }
 ```
 
-**总结**
+## 总结
 
 接收用户事件的方式是采用事件的回调，具体步骤是：
 
