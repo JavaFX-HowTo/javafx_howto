@@ -10,10 +10,10 @@ import javafx.stage.Stage;
 
 class ConfirmWindow
 {
-    private static boolean isConfirmed;
-    private static Stage confirmWindow;
+    private boolean isConfirmed;
+    private Stage confirmWindow;
 
-    public static boolean open(String content)
+    public boolean open(String content)
     {
         isConfirmed = false;
 
@@ -66,7 +66,7 @@ public class ConfirmWindowExample extends Application
         Button button = new Button("Open Confirm Window");
         button.setOnAction(e -> 
         {
-            boolean isConfirmed = ConfirmWindow.open("你确认吗？"); // 执行代码在此处暂停，等待 openConfirmWindow 返回
+            boolean isConfirmed = new ConfirmWindow().open("你确认吗？"); // 执行代码在此处暂停，等待 openConfirmWindow 返回
             if (isConfirmed)
             {
                 System.out.println("Confirmed");
