@@ -96,5 +96,5 @@ public class CheckBoxExample extends Application
 
 ## 总结
 
-- 使用 CheckBox 可以轻松获取用户的选择。
+- 使用 CheckBox 可以轻松获取用户的选择
 - 通过将 CheckBox 放入 Map 中，我们可以对 CheckBox 进行编号
