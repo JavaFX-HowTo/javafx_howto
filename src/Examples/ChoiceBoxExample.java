@@ -47,6 +47,7 @@ public class ChoiceBoxExample extends Application
         vBox.setSpacing(10);
 
         countryChoiceBox = new ChoiceBox<>();
+        //countryChoiceBox.setOnAction( e-> getChoice() ); // 当用户选择后立即做出响应
         countryChoiceBox.getItems().add(new CityItem(1, "Beijing"));
         countryChoiceBox.getItems().add(new CityItem(2, "Shanghai"));
         countryChoiceBox.getItems().add(new CityItem(3, "Guangzhou"));
