@@ -1,8 +1,14 @@
 import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.geometry.Insets;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -23,17 +29,43 @@ public class TableViewExample extends Application
         public int getAge() { return age; }
     }
     
-
     private TableView<Student> studentTableView;
+    private ObservableList<Student> studentList;
+    private TextField nameTextField;
+    private TextField ageTextField;
 
     private void onSelectItem(Student item)
     {
-        System.out.println(String.format("name: %s, age: %d", item.getName(), item.getAge()));
+        if (item != null)
+        {
+            System.out.println(String.format("name: %s, age: %d", item.getName(), item.getAge()));
+        }
+    }
+
+    private void addStudent()
+    {
+        String name = nameTextField.getText();
+        int age = Integer.parseInt(ageTextField.getText());
+
+        Student student = new Student(name, age);
+        studentList.add(student);
+
+        nameTextField.clear();
+        ageTextField.clear();
+    }
+
+    private void delStudent()
+    {
+        Student selectedItem = studentTableView.getSelectionModel().getSelectedItem();
+        studentList.remove(selectedItem);
     }
 
     private void buildStudentTableView()
     {
+        studentList = FXCollections.observableArrayList();
+
         studentTableView = new TableView<>();
+        studentTableView.setItems(studentList);
         studentTableView.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> onSelectItem(newValue) );
         
         TableColumn<Student, String> nameColumn = new TableColumn<>("Name");
@@ -44,18 +76,45 @@ public class TableViewExample extends Application
         studentTableView.getColumns().add(nameColumn);
         studentTableView.getColumns().add(ageColumn);
 
-        studentTableView.getItems().add(new Student("Tom", 21));
-        studentTableView.getItems().add(new Student("Jim", 23));
-        studentTableView.getItems().add(new Student("Micle", 18));
+        studentList.add(new Student("Tom", 21));
+        studentList.add(new Student("Jim", 23));
+        studentList.add(new Student("Micle", 18));
+    }
+
+    private HBox buildInputLayout()
+    {
+        HBox hBox = new HBox();
+        hBox.setSpacing(10);
+        
+        nameTextField = new TextField();
+        nameTextField.setPromptText("Name");
+        nameTextField.setPrefWidth(100);
+        ageTextField = new TextField();
+        ageTextField.setPromptText("Age");
+        ageTextField.setPrefWidth(100);
+
+        Button addButton = new Button("ADD");
+        addButton.setOnAction(e -> addStudent() );
+        Button delButton = new Button("DEL");
+        delButton.setOnAction(e -> delStudent() );
+
+        hBox.getChildren().addAll(nameTextField, ageTextField, addButton, delButton);
+
+        return hBox;
     }
 
     @Override
     public void start(Stage window) throws Exception
     {
         VBox vBox = new VBox();
+        vBox.setPadding(new Insets(10));
+        vBox.setSpacing(10);
 
         this.buildStudentTableView();
         vBox.getChildren().add(studentTableView);
+
+        HBox inputLayout = this.buildInputLayout();
+        vBox.getChildren().add(inputLayout);
 
         Scene scene = new Scene(vBox, 400, 300);
 
