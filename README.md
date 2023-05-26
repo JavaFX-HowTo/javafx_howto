@@ -27,7 +27,7 @@
 
 如果您刚开始学习 JavaFX，以下资源可能会对您有所帮助：
 
-- [JavaFX Tutorial](https://jenkov.com/tutorials/javafx) - 官方推荐的学习网站
+- [JavaFX Tutorial](https://jenkov.com/tutorials/javafx/index.html) - 官方推荐的学习网站
 - [JavaFX Youtube Tutorial](https://www.youtube.com/watch?v=FLkOX4Eez6o&list=PL6gx4Cwl9DGBzfXLWLSYVy8EbTdpGbUIG) - 个人比较喜欢的视频教程
 
 ---
