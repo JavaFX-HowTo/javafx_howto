@@ -1,0 +1,16 @@
+.root {
+    -fx-background-color: #383838;
+    -fx-font-size: 24
+}
+
+.label {
+    -fx-text-fill: #F0FFFF;
+}
+
+.label-blue {
+    -fx-text-fill: #6495ED;
+}
+
+#label-bold {
+    -fx-font-weight: bold;
+}
