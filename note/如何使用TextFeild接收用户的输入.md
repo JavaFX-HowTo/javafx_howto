@@ -1,8 +1,8 @@
-# 如何使用TextFeild接收用户的输入
+# 如何使用TextField接收用户的输入
 
-TextFeild 是单行输入框，可以在里面编辑文本，从而得到用户的输入。
+TextField 是单行输入框，可以在里面编辑文本，从而得到用户的输入。
 
-TextFeild 的显示效果如下：
+TextField 的显示效果如下：
 
 ![](./pic/TextFieldExample.png)
 
@@ -63,4 +63,4 @@ public class TextFieldExample extends Application
 
 ## 总结
 
-我们可以通过 TextFeild 控件获取用户的输入。
+我们可以通过 TextField 控件获取用户的输入。
