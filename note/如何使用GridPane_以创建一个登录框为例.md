@@ -121,6 +121,38 @@ public class LoginWindowExample extends Application
 }
 ```
 
+## 如何调整格子内控件的对齐方式和宽度 - 使用列约束ColumnConstraints
+
+默认情况下，GridPane会自动调整格子的布局和宽度，如何按照我们想要的需求进行调整呢？
+
+比如想要使格子内的元素采用右对齐，应该如何实现？
+
+方法是使用列约束ColumnConstraints。
+
+我们可以为 GridPane 的每列设置列约束，列约束是一个 ColumnConstraints 对象。
+
+请看下面的代码示例：
+
+```java
+private void buildColumnConstraints()
+{
+    ColumnConstraints col1 = new ColumnConstraints();
+    ColumnConstraints col2 = new ColumnConstraints();
+
+    col1.setHalignment(HPos.RIGHT);
+    col2.setHalignment(HPos.RIGHT);
+    col2.setPrefWidth(100);
+
+    gridPane.getColumnConstraints().addAll(col1, col2);
+}
+```
+
+上面这段代码我们建立了两个列约束，分别对应第一列和第二列。那么位于第一列的格子将采用右对齐，位于第二列的格子将采用右对齐且首选宽度是100像素。
+
+经过修改后，运行的结果如图：
+
+![](./pic/LoginWindowExample2.png)
+
 ## 总结
 
 - GridPane 是一个二维表格布局，可用于创建复杂的用户界面。
@@ -128,3 +160,5 @@ public class LoginWindowExample extends Application
 - GridPane的 setVgap 和 setHgap 可用于设置格子见的距离。
 - 通过调用 `gridPane.add(Node, col, row)` 方法，可以将组件放置在指定的格子中。
 - 使用GridPane可以轻松地创建登录框等复杂布局。
+
+另外，我们还可以通过设置列约束来修改GridPane中格子的默认布局。
