@@ -7,8 +7,8 @@
 在这里下载 JDK1.8: 
 
 ```
-链接：https://pan.baidu.com/s/1xPj1izE39ucJYKPvGSrbIQ?pwd=1111 
-提取码：1111
+链接: https://pan.baidu.com/s/1cV5UEh1KBrEJQ0FDPo4Lpw?pwd=64mf 
+提取码: 64mf
 ```
 
 打开命令提示行验证一下自己的 JDK 版本：
