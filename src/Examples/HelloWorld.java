@@ -9,12 +9,12 @@ public class HelloWorld extends Application
     @Override
     public void start(Stage window) throws Exception
     {
-        VBox vBox = new VBox();
+        VBox root = new VBox();
 
         Label label = new Label("Hello World");
-        vBox.getChildren().add(label);
+        root.getChildren().add(label);
 
-        Scene scene = new Scene(vBox, 400, 300);
+        Scene scene = new Scene(root, 400, 300);
 
         window.setScene(scene);
         window.setTitle(this.getClass().getSimpleName());
