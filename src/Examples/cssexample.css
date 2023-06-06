@@ -10,6 +10,9 @@
 .label-blue {
     -fx-text-fill: #6495ED;
 }
+.label-blue:hover {
+    -fx-text-fill: red;
+}
 
 #label-bold {
     -fx-font-weight: bold;

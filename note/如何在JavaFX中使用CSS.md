@@ -115,6 +115,23 @@ public class CSSExample extends Application
 - `labelBold.setId("label-bold");` 这句话同样也是使用自定义的规则 label-bold 的设定来替代默认设定 （同时保留其他样式）
 - `labelRed.setStyle("-fx-text-fill: #A52A2A");` 这句话将规则写入代码中，从而代替默认设定（同时保留其他样式）
 
+## 如何增加悬停样式？
+
+我们为一个控件设置样式后，除了正常的显示，还可能希望有一些特殊的效果，比如当鼠标悬停到控件上时显示另一种颜色。
+
+此时我们可以增加一个规则，以对基础规则进行一个拓展，比如：
+
+```css
+.label-blue {
+    -fx-text-fill: #6495ED;
+}
+.label-blue:hover {
+    -fx-text-fill: red;
+}
+```
+
+hover 的规则也将用于css被设置为 `.label-blue` 的控件，我们不需要额外写代码就可以得到想要的效果：当鼠标放在控件上时，控件的文本变成了红色。
+
 ## 总结
 
 有三种方式来设定 CSS 样式：
