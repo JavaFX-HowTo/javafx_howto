@@ -7,7 +7,7 @@ import javafx.stage.StageStyle;
 
 import java.util.Objects;
 
-public class LoginWindow extends Application
+public class LoginWindowDemo extends Application
 {
     private double offsetX;
     private double offsetY;
