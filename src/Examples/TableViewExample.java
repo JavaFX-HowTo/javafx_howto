@@ -29,7 +29,7 @@ public class TableViewExample extends Application
         public int getAge() { return age; }
     }
     
-    private TableView<Student> studentTableView;
+    public TableView<Student> studentTableView;
     private ObservableList<Student> studentList;
     private TextField nameTextField;
     private TextField ageTextField;
@@ -60,7 +60,7 @@ public class TableViewExample extends Application
         studentList.remove(selectedItem);
     }
 
-    private void buildStudentTableView()
+    public void buildStudentTableView()
     {
         studentList = FXCollections.observableArrayList();
 
@@ -79,6 +79,7 @@ public class TableViewExample extends Application
         studentList.add(new Student("Tom", 21));
         studentList.add(new Student("Jim", 23));
         studentList.add(new Student("Micle", 18));
+        studentList.add(new Student("Lucy", 32));
     }
 
     private HBox buildInputLayout()
