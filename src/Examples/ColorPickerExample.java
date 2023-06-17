@@ -1,31 +1,28 @@
-import java.time.LocalDate;
-
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.DatePicker;
+import javafx.scene.control.ColorPicker;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
-public class DatePickerExample extends Application
+public class ColorPickerExample extends Application
 {
     @Override
     public void start(Stage window) throws Exception
     {
         VBox root = new VBox();
-        root.setSpacing(10);
 
-        DatePicker datePicker = new DatePicker();
-
+        ColorPicker colorPicker = new ColorPicker();
         Button button = new Button("Click Me");
-        Label dateLabel = new Label("UnChoosen");
+        Label colorLabel = new Label("UnChoosen");
         button.setOnAction(e -> {
-            LocalDate localDate = datePicker.getValue();
-            dateLabel.setText(localDate.toString());
-        } );
+            Color color = colorPicker.getValue();
+            colorLabel.setText(color.toString());
+        });
 
-        root.getChildren().addAll(datePicker, button, dateLabel);
+        root.getChildren().addAll(colorPicker, button, colorLabel);
 
         Scene scene = new Scene(root, 400, 300);
 
