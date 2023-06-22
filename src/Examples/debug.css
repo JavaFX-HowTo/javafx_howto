@@ -1,0 +1,4 @@
+.debug-border {
+    -fx-border-color: #000;
+    -fx-border-width: .4px .4px .4px .4px;
+}
