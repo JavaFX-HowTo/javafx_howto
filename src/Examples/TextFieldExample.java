@@ -24,6 +24,7 @@ public class TextFieldExample extends Application
 
         TextField textField = new TextField();
         textField.setPromptText("Input some content");
+        textField.setOnAction(e -> handleInput(textField.getText()) ); // 当键入回车时触发
 
         Button button = new Button("OK");
         button.setOnAction(e -> handleInput(textField.getText()) );
