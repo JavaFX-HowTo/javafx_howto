@@ -23,7 +23,7 @@ public class ParallelTransitionExample extends Application {
         primaryStage.setScene(new Scene(createContent()));
         primaryStage.show();
     }
-    
+
     private Parent createContent() {
         Pane pane = new Pane();
         pane.setPrefWidth(600);

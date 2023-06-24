@@ -12,7 +12,7 @@ public class ToggleSwitchExample extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        primaryStage.setTitle(this.getClass().getSimpleName());        
+        primaryStage.setTitle(this.getClass().getSimpleName());
         primaryStage.setScene(new Scene(createContent()));
         primaryStage.show();
     }
