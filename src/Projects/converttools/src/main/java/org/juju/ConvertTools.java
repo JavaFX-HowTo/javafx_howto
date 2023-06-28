@@ -37,6 +37,10 @@ public class ConvertTools extends Application
         MenuItem unicodeConvertMenuItem = new MenuItem("Unicode转换");
         unicodeConvertMenuItem.setOnAction( e -> setFunctionView(new UnicodeConvert().getNode(), "Unicode转换") );
         functionMenu.getItems().add(unicodeConvertMenuItem);
+
+        MenuItem longIntConvertItem = new MenuItem("Long<->Int转换");
+        longIntConvertItem.setOnAction(e -> setFunctionView(new LongIntConvert().getNode(), "Long<->Int转换") );
+        functionMenu.getItems().add(longIntConvertItem);
     }
 
     private void setFunctionView(Node node, String functionName)
