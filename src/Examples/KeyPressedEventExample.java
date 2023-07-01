@@ -1,11 +1,14 @@
 import javafx.application.Application;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class KeyPressedEventExample extends Application {
+
+    private Stage window;
 
     public static void main(String[] args) {
         launch(args);
@@ -13,6 +16,7 @@ public class KeyPressedEventExample extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+        window = primaryStage;
         primaryStage.setTitle(this.getClass().getSimpleName());
         Scene scene = new Scene(createContent());
         scene.setOnKeyPressed(this::onKeyPressedEvent);
@@ -30,5 +34,9 @@ public class KeyPressedEventExample extends Application {
 
     private void onKeyPressedEvent(KeyEvent keyEvent) {
         System.out.println(keyEvent.getCode().toString());
+
+        if (keyEvent.getCode().equals(KeyCode.ESCAPE)) {
+            window.close();
+        }
     }
 }
