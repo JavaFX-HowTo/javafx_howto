@@ -8,6 +8,9 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
+// stroke 就是画线的
+// fill 就是画实心的
+
 public class CanvasExample extends Application {
 
     private GraphicsContext graphicsContext2D;
@@ -42,7 +45,13 @@ public class CanvasExample extends Application {
             graphicsContext2D.strokeLine(200, 50, 300, 50);
         });
 
-        HBox hBox = new HBox(10, drawLineBtn);
+        Button drawOvalBtn = new Button("Draw Oval"); // 画一个椭圆
+        drawOvalBtn.setOnAction(e -> {
+            graphicsContext2D.setStroke(Color.BLUE);
+            graphicsContext2D.strokeOval(300, 50, 20, 20);
+        });
+
+        HBox hBox = new HBox(10, drawLineBtn, drawOvalBtn);
         return hBox;
     }
 
